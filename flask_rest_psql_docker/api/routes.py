@@ -48,6 +48,7 @@ class DogsList(Resource):
     
     def get(self):
         """returns a list of dogs"""
+
     def post(self):
         """Adds a new dog to the list"""
 

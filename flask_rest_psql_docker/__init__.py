@@ -4,10 +4,10 @@ from flask_rest_psql_docker.api.models import db, ma
 
 app = Flask(__name__)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://test:password@localhost:5432/testdb'
+
 db.init_app(app)
 ma.init_app(app)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://testusr:password@localhost:5432/testdb'
 
 # Register blueprints; import below db to avoid circular errors
 from flask_rest_psql_docker.api.routes import blueprint as api

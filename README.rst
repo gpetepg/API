@@ -28,14 +28,24 @@ CHECK HOSTS
 
 ``docker exec -ti <image_id> cat "/etc/hosts"``
 
+Kill all containers
+
+``docker stop $(docker ps -aq)``
+
 PSQL
 ============
 
 https://www.youtube.com/watch?v=aHbE3pTyG-Q
 
-``docker exec -it <image_id> psql testdb -U testusr``
+``docker exec -it <image_id> psql -U postgres``
 
 Make sure your host machine's psql is off.
+
+
+Curl check
+
+``docker-compose exec app curl db.postgres:5432``
+
 
 
 

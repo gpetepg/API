@@ -5,7 +5,7 @@ import pandas as pd
 
 def main():
     insert_csv_to_db(
-        'postgresql+psycopg2://testusr:password@localhost:5432/testdb',
+        'postgresql+psycopg2://test:password@localhost:5432/testdb',
         pd.read_csv(os.path.join(os.environ["API_FILES"], 'people.csv')),
         table="people",
     )

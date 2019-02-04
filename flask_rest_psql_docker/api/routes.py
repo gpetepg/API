@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask_restplus import Api, Resource
 from flask import jsonify
 
-from .models import People, PeopleSchema
+from models import People, PeopleSchema
 
 
 blueprint = Blueprint('api', __name__, template_folder='templates')
@@ -31,12 +31,9 @@ class PeopleList(Resource):
 
 
 @ns_ppl.route("/<int:id>")
-class People(Resource):
+class EndPeople(Resource):
     def get(self, id):
-        """
-        Displays a person's details
-        """
-        from .models import People, PeopleSchema
+        """Displays a person's details"""
 
         person = People.query.filter_by(id=f'{id}').first()
         schema = PeopleSchema()
@@ -45,31 +42,24 @@ class People(Resource):
         return jsonify({'user': output})
 
     def put(self, id):
-        """
-        Edits a selected person
-        """
+        """Edits a selected person"""
 
 
 @ns_dogs.route("/")
 class DogsList(Resource):
+    
     def get(self):
-        """
-        returns a list of dogs
-        """
+        """returns a list of dogs"""
     def post(self):
-        """
-        Adds a new dog to the list
-        """
+        """Adds a new dog to the list"""
 
 
 @ns_dogs.route("/<int:id>")
 class Dogs(Resource):
+    
     def get(self, id):
-        """
-        Displays a dog's details
-        """
+        """Displays a dog's details"""
+        
     def put(self, id):
-        """
-        Edits a selected dog
-        """
+        """Edits a selected dog"""
 

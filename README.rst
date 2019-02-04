@@ -35,6 +35,8 @@ https://www.youtube.com/watch?v=aHbE3pTyG-Q
 
 ``docker exec -it <image_id> psql testdb -U testusr``
 
+Make sure your host machine's psql is off.
+
 
 
 

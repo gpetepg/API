@@ -14,10 +14,10 @@ ns_dogs = api.namespace('dogs', description='Dog Information')
 
 @ns_ppl.route("/")
 class PeopleList(Resource):
+    
     def get(self):
-        """
-        returns a list of people
-        """
+        """returns a list of people"""
+        
         person = People.query.first()
         schema = PeopleSchema()
         output = schema.dump(person).data
@@ -25,9 +25,7 @@ class PeopleList(Resource):
         return jsonify({'user': output})
 
     def post(self):
-        """
-        Adds a new person to the list
-        """
+        """Adds a new person to the list"""
 
 
 @ns_ppl.route("/<int:id>")

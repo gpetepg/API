@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask_restplus import Api, Resource
 from flask import jsonify
 
-from models import People, PeopleSchema
+from .models import People, PeopleSchema
 
 
 blueprint = Blueprint('api', __name__, template_folder='templates')

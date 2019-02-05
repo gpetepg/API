@@ -1,11 +1,11 @@
 How to start
 ============
 
-- ``. setup.env``
+- ``$ . setup.env``
 - ``$ make``
-- ``docker-compose up --build -d``
-- ``cd flask_rest_psql_docker/database``
-- ``python3 insert_to_psql.py``
+- ``$ docker-compose up --build -d``
+- ``$ cd flask_rest_psql_docker/database``
+- ``$ python3 insert_to_psql.py``
 
 Docker
 ============

@@ -5,7 +5,6 @@ RUN mkdir /API
 WORKDIR /API
 COPY . /API
 RUN pip install --no-cache-dir -r requirements.txt
-ENV FLASK_ENV="docker"
 EXPOSE 5000
 
 

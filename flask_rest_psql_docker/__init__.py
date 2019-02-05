@@ -4,7 +4,11 @@ from flask_rest_psql_docker.api.models import db, ma
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://test:password@localhost:5432/testdb'
+# @postgres:5432 is the name of the psql container
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://test:password@postgres:5432/testdb'
+
+# # Test on sqlite
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/tylerguo'
 
 db.init_app(app)
 ma.init_app(app)

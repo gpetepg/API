@@ -5,14 +5,14 @@ How to start
 - ``$ make``
 - ``$ docker-compose up --build -d``
 - ``$ cd flask_rest_psql_docker/database``
-- ``$ python3 insert_to_psql.py``
+- ``$ python3 insert_to_psql.py`` (Make sure your host machine's psql is off.)
+- Check ``localhost 5000``
 
 Docker
 ============
 
-http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images
-
-``docker-compose up --build -d``
+Docker commands:
+- http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images 
 
 You can also set envvar is the docker-compose file like so.
 
@@ -20,8 +20,6 @@ You can also set envvar is the docker-compose file like so.
           - POSTGRES_USER=${POSTGRES_USER}
           - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
           - POSTGRES_DB=${POSTGRES_DB}
-
-Check ``localhost 5000``
 
 Check ENVVARS
 
@@ -42,12 +40,9 @@ https://www.youtube.com/watch?v=aHbE3pTyG-Q
 
 ``docker exec -it <image_id> psql -U postgres``
 
-Make sure your host machine's psql is off.
+Curl
 
-
-Curl check
-
-``docker-compose exec app curl db.postgres:5432``
+``docker-compose exec app curl postgres:5432``
 
 
 

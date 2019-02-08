@@ -1,9 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
-
-
-db = SQLAlchemy()
-ma = Marshmallow()
+from flask_rest_psql_docker.extensions import db, ma
 
 
 class People(db.Model):  # Table name is set to lowercase of the class name

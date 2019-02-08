@@ -12,7 +12,7 @@ Docker
 ============
 
 Docker commands:
-- http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images 
+- http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images
 
 You can also set envvar is the docker-compose file like so.
 
@@ -44,7 +44,23 @@ Curl
 
 ``docker-compose exec app curl postgres:5432``
 
+Migrations
+============
 
+``docker-compose exec container-name /path/to/manage.py db migrate <command>``
+
+``python3 manage.py db init``
+``python3 manage.py db migrate``
+``python3 manage.py db upgrade``
+
+
+Extensions
+============
+
+flask-script/flask-migrate : for DB migrations
+flask-restplus : swagger/api
+flask-marshmallow : serialization (needs marshmallow-sqlalchemy)
+flask-sqlalchemy : db/ORM (needs psycopg2 for psql)
 
 
 

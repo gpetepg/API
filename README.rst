@@ -57,10 +57,10 @@ Migrations
 Extensions
 ============
 
-flask-script/flask-migrate : for DB migrations
-flask-restplus : swagger/api
-flask-marshmallow : serialization (needs marshmallow-sqlalchemy)
-flask-sqlalchemy : db/ORM (needs psycopg2 for psql)
+- flask-script/flask-migrate : for DB migrations
+- flask-restplus : swagger/api
+- flask-marshmallow : serialization (needs marshmallow-sqlalchemy)
+- flask-sqlalchemy : db/ORM (needs psycopg2 for psql)
 
 
 

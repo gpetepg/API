@@ -1,22 +1,24 @@
 """http://flask.pocoo.org/docs/1.0/tutorial/factory/"""
+
 from flask import Flask
 from flask_rest_psql_docker.extensions import db, ma, migrate
+import flask_rest_psql_docker.config as configure
 import os
 
 
-def create_app(test_config=None):
-    # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
+def create_app(config=None):
+    # create app
+    app = Flask(__name__)
 
-    if test_config is None:
-        # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
+    # Set config
+    if config == 'test':
+        app.config.from_object(configure.TestingConfig)
+    elif config == 'development':
+        app.config.from_object(configure.DevelopmentConfig)
+    elif config == 'production':
+        app.config.from_object(configure.ProductionConfig)
     else:
-        # load the test config if passed in
-        app.config.from_mapping(test_config)
-
-    # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/tylerguo'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://test:password@postgres:5432/testdb'
+        return 'Incorrect configuration'
 
     # Extensions
     db.init_app(app)

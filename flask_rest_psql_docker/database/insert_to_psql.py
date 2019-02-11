@@ -5,11 +5,12 @@ import pandas as pd
 
 def main():
     insert_csv_to_db(
-        'postgresql+psycopg2://test:password@localhost:5432/testdb',
+        # 'postgresql+psycopg2://localhost/tylerguo',  # Localhost Postgresql
+        'postgresql+psycopg2://test:password@localhost:5432/testdb',  # Localhost for Docker Postgresql
         pd.read_csv(os.path.join(os.environ["API_FILES"], 'people.csv')),
         table="people",
     )
-    print("successful added .csv data to Docker image's psql")
+    print("successful added .csv data to Postgresql")
 
 
 if __name__ == '__main__':

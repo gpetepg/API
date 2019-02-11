@@ -18,7 +18,15 @@ blueprint = Blueprint('website', __name__, template_folder='templates')
 api = Api(blueprint)
 
 
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif', 'csv',}
+ALLOWED_EXTENSIONS = {
+    'txt',
+    'pdf',
+    'png',
+    'jpg',
+    'jpeg',
+    'gif',
+    'csv',
+}
 
 
 def allowed_file(filename):

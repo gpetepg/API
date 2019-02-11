@@ -1,25 +1,32 @@
 How to start
 ============
 
-- ``$ . setup.env``
-- ``$ make``
-- ``$ docker-compose up --build -d``
+- ``$ . setup.env`` Sets environment variables
+- ``$ make`` Sets up VE
+- ``$ . ve/bin/activate`` Source the VE
+- ``$ docker-compose up --build -d`` Build the images
+- Check ``localhost 5000``
+
+Now to migrate
+
+``docker exec <container-name/id of app> python3 manage.py db migrate <command>``
+
+Run these 3 commands
+- ``python3 manage.py db init``
+- ``python3 manage.py db migrate``
+- ``python3 manage.py db upgrade``
+
+Insert test data locally.
+
+- ``docker exec <container-name/id of app> bash``
 - ``$ cd flask_rest_psql_docker/database``
 - ``$ python3 insert_to_psql.py`` (Make sure your host machine's psql is off.)
-- Check ``localhost 5000``
 
 Docker
 ============
 
-Docker commands:
+Useful Docker commands:
 - http://blog.baudson.de/blog/stop-and-remove-all-docker-containers-and-images
-
-You can also set envvar is the docker-compose file like so.
-
-    environment:
-          - POSTGRES_USER=${POSTGRES_USER}
-          - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-          - POSTGRES_DB=${POSTGRES_DB}
 
 Check ENVVARS
 
@@ -38,21 +45,12 @@ PSQL
 
 https://www.youtube.com/watch?v=aHbE3pTyG-Q
 
-``docker exec -it <image_id> psql -U postgres``
+``docker exec -it <image_id> psql testdb -U postgres test``
 
-Curl
-
-``docker-compose exec app curl postgres:5432``
-
-Migrations
-============
-
-``docker exec <container-name/id> python3 manage.py db migrate <command>``
-
-``python3 manage.py db init``
-``python3 manage.py db migrate``
-``python3 manage.py db upgrade``
-
+psql commands:
+- ``\dt`` Show relations
+- ``\l`` List of databases
+` ``\q`` Quit
 
 Extensions
 ============
@@ -61,7 +59,3 @@ Extensions
 - flask-restplus : swagger/api
 - flask-marshmallow : serialization (needs marshmallow-sqlalchemy)
 - flask-sqlalchemy : db/ORM (needs psycopg2 for psql)
-
-
-
-

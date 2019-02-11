@@ -20,11 +20,6 @@ api = Api(blueprint)
 
 ALLOWED_EXTENSIONS = {
     'txt',
-    'pdf',
-    'png',
-    'jpg',
-    'jpeg',
-    'gif',
     'csv',
 }
 

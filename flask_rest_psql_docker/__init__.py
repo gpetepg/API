@@ -18,7 +18,7 @@ def create_app(config=None):
     elif config == 'production':
         app.config.from_object(configure.ProductionConfig)
     else:
-        raise ValueError('Incorrect config')
+        raise ValueError('Incorrect configuration')
 
     # Extensions
     db.init_app(app)

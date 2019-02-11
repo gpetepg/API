@@ -47,7 +47,7 @@ Curl
 Migrations
 ============
 
-``docker-compose exec container-name /path/to/manage.py db migrate <command>``
+``docker exec <container-name/id> python3 manage.py db migrate <command>``
 
 ``python3 manage.py db init``
 ``python3 manage.py db migrate``

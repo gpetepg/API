@@ -6,7 +6,7 @@ services:
     volumes:
       - ./postgres-data/postgres:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - 5432:5432
     env_file:
       - setup.env
     environment:

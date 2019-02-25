@@ -11,7 +11,7 @@ def create_app(config=None):
     app = Flask(__name__)
 
     # Set config
-    if config == 'test':
+    if config == 'testing':
         app.config.from_object(configure.TestingConfig)
     elif config == 'development':
         app.config.from_object(configure.DevelopmentConfig)

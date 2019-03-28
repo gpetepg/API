@@ -6,7 +6,7 @@ jobs:
       - image: circleci/python:3.6.6
         environment:
          - WEBSITE_UPLOADS=flask_rest_psql_docker/website/uploads
-      - image: circleci/postgres:10.6
+      - image: circleci/postgres:9.6.5-alpine-ram
         environment:
         - POSTGRES_USER=test
         - POSTGRES_PASSWORD=password

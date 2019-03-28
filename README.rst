@@ -58,7 +58,7 @@ psql commands:
 
 - ``\dt`` Show relations
 - ``\l`` List of databases
-- ` ``\q`` Quit
+- ``\q`` Quit
 
 Extensions
 ============
@@ -70,7 +70,7 @@ Extensions
 
 ToDo:
 ============
- - Better CircleCI testing not just make.
- - WSGI
- - Cookiecutter functionality?
- - Unit testing?
+- Better CircleCI testing not just make.
+- WSGI
+- Cookiecutter functionality?
+- Unit testing?

@@ -17,6 +17,8 @@ services:
     restart: always
     env_file:
       - setup.env
+    environment:
+      - WEBSITE_UPLOADS=flask_rest_psql_docker/website/uploads
     build: .
     ports:
       - 5000:5000

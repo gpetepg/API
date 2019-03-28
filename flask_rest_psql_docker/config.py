@@ -17,6 +17,7 @@ class ProductionConfig(Config):
 class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://test:password@postgres:5432/testdb'
     DEBUG = True
+    TESTING = True
 
 
 class TestingConfig(Config):

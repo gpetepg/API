@@ -18,3 +18,5 @@ postgres-data/
 .idea/
 
 migrations/
+
+./API/tests/db_testing/people.sqlite

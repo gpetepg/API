@@ -1,4 +1,5 @@
 """http://flask.pocoo.org/docs/1.0/config/#instance-folders"""
+import os
 
 
 class Config:
@@ -6,6 +7,7 @@ class Config:
     DEBUG = False
     TESTING = False
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://localhost/tylerguo'  # May need to change to upload
+    UPLOAD_FOLDER = os.environ.get('SITE_UPLOADS')
 
 
 class ProductionConfig(Config):

@@ -15,17 +15,18 @@ jobs:
     - checkout
     - run:
           command: |  # use pipenv to install dependencies
-            sudo pip install pipenv
-            pipenv install
+            sudo pip install venv
+            venv install
+            python3 -m venv ve
     - save_cache:
           key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
-            - ".venv"
+            - ".ve"
             - "/usr/local/bin"
             - "/usr/local/lib/python3.6/site-packages"
     - run:
         command: |
-          . venv/bin/activate
+          . ve/bin/activate
           pip install -r requirements.txt
     - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
         path: test-results

@@ -1,5 +1,8 @@
-[![CircleCI](https://circleci.com/gh/gpetepg/API/tree/master.svg?style=svg)](https://circleci.com/gh/gpetepg/API/tree/master)
-[![CircleCI](https://circleci.com/gh/gpetepg/API/tree/circle.svg?style=svg)](https://circleci.com/gh/gpetepg/API/tree/circle)
+.. image:: https://circleci.com/gh/gpetepg/API/tree/circle.svg?style=svg
+    :target: https://circleci.com/gh/gpetepg/API/tree/circle
+
+.. image:: https://circleci.com/gh/gpetepg/API/tree/master.svg?style=svg
+    :target: https://circleci.com/gh/gpetepg/API/tree/master
 
 How to start
 ============

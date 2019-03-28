@@ -3,7 +3,7 @@ import os
 
 
 class Config:
-    SECRET_KEY = ''
+    SECRET_KEY = 'superSecret'
     DEBUG = False
     TESTING = False
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://localhost/tylerguo'  # May need to change to upload

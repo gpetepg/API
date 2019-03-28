@@ -68,5 +68,6 @@ Extensions
 ToDo:
 ============
 Circle CI
+WSGI
 Cookiecutter functionality?
 Unit testing?

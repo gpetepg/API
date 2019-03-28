@@ -1,3 +1,6 @@
+.. image:: https://circleci.com/gh/gpetepg/API/tree/master.svg?style=svg
+    :target: https://circleci.com/gh/gpetepg/API/tree/master
+
 How to start
 ============
 
@@ -67,7 +70,7 @@ Extensions
 
 ToDo:
 ============
-Circle CI
+Better CircleCI testing not just make.
 WSGI
 Cookiecutter functionality?
 Unit testing?

@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:  # required for runs that don't use workflows
+    working_directory: ~/flask_rest_psql_docker
+    docker:
+      - image: circleci/python:3.6.6
+        environment:
+         - WEBSITE_UPLOADS=flask_rest_psql_docker/website/uploads
+      - image: circleci/postgres:10.6
+        environment:
+        - POSTGRES_USER=test
+        - POSTGRES_PASSWORD=password
+        - POSTGRES_DB=testdb
+    steps: # steps that comprise the `build` job
+    - checkout
+    - run:
+        command: |
+          python3 -m venv ve
+          . setup.env
+          make
+          . ve/bin/activate
+          pip install -r requirements.txt
+    - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
+        path: test-results
+    - store_artifacts: # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
+        path: test-results
+        destination: tr1

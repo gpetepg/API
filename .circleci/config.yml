@@ -25,6 +25,8 @@ jobs:
             - "/usr/local/lib/python3.6/site-packages"
     - run:
         command: |
+          . pipenv/bin/activate
+          pip install -r requirements.txt
           pipenv run python3 run.py
     - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
         path: test-results

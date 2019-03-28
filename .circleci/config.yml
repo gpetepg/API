@@ -16,6 +16,7 @@ jobs:
     - run:
         command: |
           python3 -m venv ve
+          . setup.env
           make
     - run:
         command: |

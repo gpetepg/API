@@ -26,7 +26,7 @@ ALLOWED_EXTENSIONS = {
 
 def allowed_file(filename):
     return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @blueprint.route('/', methods=['GET', 'POST'])
@@ -34,14 +34,22 @@ def homepage():
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
-            flash('No file part')
+            return redirect(url_for(
+                'website.failed_file')
+            )
             return redirect(request.url)
         file = request.files['file']
         # if user does not select file, browser also
         # submit an empty part without filename
         if file.filename == '':
-            flash('No selected file')
+            return redirect(url_for(
+                'website.failed_file')
+            )
             return redirect(request.url)
+        if not allowed_file(file.filename):
+            return redirect(url_for(
+                'website.failed_file')
+            )
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             file.save(os.path.join(os.environ.get('WEBSITE_UPLOADS'), filename))
@@ -64,9 +72,9 @@ def homepage():
 
 @blueprint.route('/uploaded_file')
 def uploaded_file():
-    return('Success')
+    return render_template('success.html')
 
 
 @blueprint.route('/failed_file')
 def failed_file():
-    return('Failure, check for duplicate data. Make sure the data matches the table and is a .txt or .csv')
+    return render_template('failed.html')

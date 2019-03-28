@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/gpetepg/API/tree/master.svg?style=svg)](https://circleci.com/gh/gpetepg/API/tree/master)
+[![CircleCI](https://circleci.com/gh/gpetepg/API/tree/circle.svg?style=svg)](https://circleci.com/gh/gpetepg/API/tree/circle)
+
 How to start
 ============
 

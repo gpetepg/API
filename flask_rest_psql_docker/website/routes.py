@@ -63,7 +63,7 @@ def homepage():
                     'website.uploaded_file',
                     filename=filename)
                 )
-            except exc.IntegrityError as e:
+            except (exc.IntegrityError, FileNotFoundError) as e:
                 return redirect(url_for(
                     'website.failed_file')
                 )

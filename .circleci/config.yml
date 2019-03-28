@@ -14,8 +14,9 @@ jobs:
     steps: # steps that comprise the `build` job
     - checkout
     - run:
-          command: |
-            python3 -m venv ve
+        command: |
+          . setup.env
+          make
     - run:
         command: |
           . ve/bin/activate

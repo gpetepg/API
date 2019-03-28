@@ -6,6 +6,8 @@ How to start
 - ``$ . ve/bin/activate`` Source the VE
 - ``$ docker-compose up --build -d`` Build the images
 - Check ``localhost 5000``
+- Upload ``test_input.csv``
+- Query ``http://localhost:5000/api`` or check ``http://localhost:5000/api/people/1`` to see the input.
 
 Now to migrate, follow this syntax.
 
@@ -62,3 +64,9 @@ Extensions
 - flask-restplus : swagger/api
 - flask-marshmallow : serialization (needs marshmallow-sqlalchemy)
 - flask-sqlalchemy : db/ORM (needs psycopg2 for psql)
+
+ToDo:
+============
+Circle CI
+Cookiecutter functionality?
+Unit testing?

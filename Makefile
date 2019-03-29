@@ -58,3 +58,6 @@ _ve_rebuild: _ve_rm _ve_build
 
 ${API_VE_DIR}:
 	make _ve_build
+
+_mkdir_uploads:
+	mkdir flask_rest_psql_docker/website/uploads

@@ -55,7 +55,8 @@ def homepage():
             file.save(os.path.join(os.environ.get('WEBSITE_UPLOADS'), filename))
             try:
                 insert_csv_to_db(
-                    'postgresql+psycopg2://test:password@postgres:5432/testdb',  # 'postgresql+psycopg2://localhost/tylerguo'
+                    # 'postgresql+psycopg2://localhost/tylerguo'
+                    'postgresql+psycopg2://test:password@postgres:5432/testdb',
                     pd.read_csv(os.path.join(os.environ.get('WEBSITE_UPLOADS'), filename)),
                     table="people",
                 )

@@ -61,3 +61,6 @@ ${API_VE_DIR}:
 
 _mkdir_uploads:
 	mkdir flask_rest_psql_docker/website/uploads
+
+# _test
+#	python3 -m unittest tests.py

@@ -72,6 +72,6 @@ Extensions
 ToDo:
 ============
 Better CircleCI testing not just make.
-WSGI
+WSGI for docker?
 Cookiecutter functionality?
 Unit testing?

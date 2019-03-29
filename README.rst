@@ -6,7 +6,6 @@ How to start
 
 - ``$ . setup.env`` Sets environment variables
 - ``$ make`` Sets up VE
-- ``$ make _mkdir_uploads``
 - ``$ . ve/bin/activate`` Source the VE
 - ``$ docker-compose up --build -d`` Build the images
 - Check ``localhost 5000``
@@ -75,3 +74,4 @@ ToDo:
 - WSGI
 - Cookiecutter functionality?
 - Unit testing?
+- When files are added you can delete the .gitignores in the empty folders.

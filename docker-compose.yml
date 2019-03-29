@@ -26,4 +26,4 @@ services:
       - .:/app
     depends_on:
       - postgres
-    entrypoint: ["python3", "run.py"]
+    entrypoint: ["gunicorn", "-b", "0.0.0.0:5000", "wsgi:app"]

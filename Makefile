@@ -56,5 +56,9 @@ _ve_rm:
 
 _ve_rebuild: _ve_rm _ve_build
 
+_tests:
+	cd tests && \
+	python3 -m unittest tests.py
+
 ${API_VE_DIR}:
 	make _ve_build

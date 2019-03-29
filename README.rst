@@ -12,6 +12,19 @@ How to start
 - Upload ``test_input.csv``
 - Query ``http://localhost:5000/api`` or check ``http://localhost:5000/api/people/1`` to see the input.
 
+To run tests:
+- make _tests
+
+To start local dev sever:
+- ``$ . setup.env`` Sets environment variables
+- ``$ make`` Sets up VE
+- ``$ . ve/bin/activate`` Source the VE
+- ``python3 run.py`` You should change the ``config`` setting to testing and will
+need to change to your local PostgreSQL in ``routes.py`` etc.
+
+To start wsgi sever:
+- ``gunicorn -b 0.0.0.0:5000 wsgi:app`` instead of ``run.py``
+
 Now to migrate, follow this syntax.
 
 - ``docker exec <container-name/id of app> python3 manage.py db migrate <command>``
@@ -70,8 +83,10 @@ Extensions
 
 ToDo:
 ============
-- Better CircleCI testing not just make.
-- WSGI
+- Better CircleCI testing not just make. (Create actual unit tests)
 - Cookiecutter functionality?
-- Unit testing?
-- When files are added you can delete the .gitignores in the empty folders.
+
+Other:
+============
+- When files are added you can delete the .gitignores in the empty folders. I didn't want to make an additional make
+target just to create empty directories upon initial pull.

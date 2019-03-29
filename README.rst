@@ -88,5 +88,4 @@ ToDo:
 
 Other:
 ============
-- When files are added you can delete the .gitignores in the empty folders. I didn't want to make an additional make
-target just to create empty directories upon initial pull.
+- When files are added you can delete the .gitignores in the empty folders. I didn't want to make an additional make target just to create empty directories upon initial pull.

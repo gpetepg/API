@@ -4,10 +4,10 @@
 How to start
 ============
 
-- ``$ . setup.env`` Sets environment variables
-- ``$ make`` Sets up VE
-- ``$ . ve/bin/activate`` Source the VE
-- ``$ docker-compose up --build -d`` Build the images
+- ``source setup.env`` Sets environment variables
+- ``make`` Sets up VE
+- ``source ve/bin/activate`` Source the VE
+- ``docker-compose up --build -d`` Build the images
 - Check ``localhost 5000``
 - Upload ``test_input.csv``
 - Query ``http://localhost:5000/api`` or check ``http://localhost:5000/api/people/1`` to see the input.
@@ -16,9 +16,9 @@ To run tests:
 - make _tests
 
 To start local dev sever:
-- ``$ . setup.env`` Sets environment variables
-- ``$ make`` Sets up VE
-- ``$ . ve/bin/activate`` Source the VE
+- ``source setup.env`` Sets environment variables
+- ``make`` Sets up VE
+- ``source ve/bin/activate`` Source the VE
 - ``python3 run.py`` You should change the ``config`` setting to testing and will
 need to change to your local PostgreSQL in ``routes.py`` etc.
 
@@ -38,8 +38,8 @@ Run these 3 commands:
 Insert test data locally.
 
 - ``docker exec <container-name/id of app> bash``
-- ``$ cd flask_rest_psql_docker/database``
-- ``$ python3 insert_to_psql.py`` (Make sure your host machine's psql is off.)
+- ``cd flask_rest_psql_docker/database``
+- ``python3 insert_to_psql.py`` (Make sure your host machine's psql is off.)
 
 Docker
 ============
@@ -85,6 +85,7 @@ ToDo:
 ============
 - Better CircleCI testing not just make. (Create actual unit tests)
 - Cookiecutter functionality?
+- Rename variables and project name to something more descriptive.
 
 Other:
 ============
